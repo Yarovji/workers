@@ -1,0 +1,51 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" (submit)="onSavePost()" *ngIf="!isLoading">
+
+    <mat-form-field>
+      <input matInput minlength="2" maxlength="18" formControlName="name" placeholder="Ім'я:">
+      <mat-error *ngIf="form.get('name').invalid">Вкажіть ім'я</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput minlength="2" maxlength="18" formControlName="surname" placeholder="Прізвище:">
+      <mat-error *ngIf="form.get('surname').invalid">Вкажіть прізвище</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Виберіть стать" matInput formControlName="gender">
+        <mat-option value="Чоловіча">Чоловіча</mat-option>
+        <mat-option value="Жіноча">Жіноча</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Виберіть дату народження" minlength="6" maxlength="10" formControlName="birthday">
+      <mat-error *ngIf="form.get('birthday').invalid">Вкажіть дату народження</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput minlength="2" maxlength="30" formControlName="workexp" placeholder="Досвід роботи:">
+      <mat-error *ngIf="form.get('workexp').invalid">Заповніть досвід роботи!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput minlength="3" maxlength="40" formControlName="technologies"
+        placeholder="Технології якими володіє працівник:">
+      <mat-error *ngIf="form.get('technologies').invalid">Поле обов'язкове для заповнення!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput minlength="4" maxlength="20" formControlName="email" placeholder="Поштова скринька:" type="email"
+        required email>
+      <mat-error *ngIf="form.get('email').invalid">Вкажіть email!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput minlength="10" maxlength="12" formControlName="phone" placeholder="Номер телефону:" type="tel">
+      <mat-error *ngIf="form.get('phone').invalid">Ви змушені вказати номер телефону! </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" type="submit">Зберегти</button>
+  </form>
+</mat-card>

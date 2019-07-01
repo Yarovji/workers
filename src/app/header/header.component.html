@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <span>
+    <a routerLink="/">Список працівників</a>
+  </span>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/create" routerLinkActive="mat-accent">Створити нового працівника</a>
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/auth/login" routerLinkActive="mat-accent">Вхід</a>
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent">Зареєструватися</a>
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <button mat-button (click)="onLogout()">Вихід</button>
+    </li>
+  </ul>
+</mat-toolbar>
