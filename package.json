@@ -46,7 +46,7 @@
     "moment": "^2.24.0",
     "mongodb": "^3.2.3",
     "mongodb-core": "^3.2.3",
-    "mongoose": "^5.5.5",
+    "mongoose": "^5.7.5",
     "mongoose-unique-validator": "^2.0.3",
     "multer": "^1.4.1",
     "ng-recaptcha": "^4.2.1",
